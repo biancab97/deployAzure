@@ -4,7 +4,8 @@ from dash import html, dcc, Output, Input
 
 # Create the app and add the pages
 dash_app = dash.Dash(__name__, use_pages=True)
-
+# create app for Azure deploy
+app = dash_app.server
 # Set the layout of the entire app
 dash_app.layout = html.Div(
     [
@@ -22,4 +23,4 @@ dash_app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    dash_app.run(debug=True)
+    dash_app.run_server(debug=True)
